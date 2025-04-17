@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>said bot</title>
+    <title>AI bot</title>
 <style>
     body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: #eaeff1;
+    background: #8fa4ac;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,7 +29,7 @@
   }
 
   .chat-header {
-    background-color: #3f51b5;
+    background-color: #0b0c16;
     color: white;
     text-align: center;
     padding: 20px;
@@ -89,7 +89,7 @@
 
   .input-area button {
     padding: 10px 15px;
-    background-color: #3f51b5;
+    background-color:rgb(5, 6, 10);
     color: white;
     border: none;
     border-radius: 30px;
@@ -106,12 +106,12 @@
 </head>
 <body>
     <div class="chat-container">
-        <div class="chat-header">said Chatbot</div>
+        <div class="chat-header">Chatbot</div>
         <div id="chatBox" class="chat-box"></div>
         <div class="input-area">
           <input id="userInput" type="text" placeholder="Écris ton message..." />
           <button onclick="send()">Envoyer</button>
-          <button onclick="clearchat()">delete chat</button>
+          
         </div>
     </div>
     <script>
@@ -149,10 +149,7 @@
           history.push({ role: "bot", message: data.saidbot });
           localStorage.setItem("chat", JSON.stringify(history));
         }
-        function clearchat(){
-          localStorage.setItem("chat", JSON.stringify([]));
-          chatBox.innerHTML = ""
-        }
+      
         console.log(localStorage.getItem("chat"))
         function loadHistory() {
           const history = JSON.parse(localStorage.getItem("chat") || "[]");
@@ -162,7 +159,7 @@
         }
     
         // Charger l’historique au chargement de la page
-        window.onload = loadHistory;
+        
     
         // Envoyer avec la touche "Entrée"
         input.addEventListener("keypress", (e) => {
